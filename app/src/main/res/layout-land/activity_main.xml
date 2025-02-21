@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -19,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.45" />
 
     <TextView
         android:id="@+id/modo"
@@ -30,8 +31,7 @@
         android:fontFamily="@font/aqua"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/hello_text"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
@@ -94,16 +94,16 @@
         android:id="@+id/plan_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:outlineAmbientShadowColor="@color/white"
         android:outlineSpotShadowColor="@color/white"
         app:cardBackgroundColor="#8BD6D6D6"
         android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="20dp"
         app:cardElevation="0dp"
-        app:layout_constraintEnd_toEndOf="@id/search_box"
+        app:layout_constraintEnd_toStartOf="@id/vertical"
         app:layout_constraintStart_toStartOf="@id/search_box"
         app:layout_constraintTop_toBottomOf="@id/timenow_text"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:clickable="true"
         android:focusable="true">
 
@@ -193,6 +193,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/daily_review_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -205,15 +206,13 @@
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:weightSum="4"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/daily_review_text">
+        app:layout_constraintStart_toStartOf="@id/vertical"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <androidx.cardview.widget.CardView
@@ -221,8 +220,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
             android:layout_weight=".9"
             android:outlineSpotShadowColor="@color/white"
             android:foreground="?android:attr/selectableItemBackground"
@@ -279,8 +278,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
             android:layout_weight=".9"
             android:outlineSpotShadowColor="@color/white"
             android:foreground="?android:attr/selectableItemBackground"
@@ -338,8 +337,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
             android:layout_weight=".9"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
@@ -397,8 +396,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
             android:layout_weight=".9"
             android:outlineSpotShadowColor="@color/white"
             android:foreground="?android:attr/selectableItemBackground"

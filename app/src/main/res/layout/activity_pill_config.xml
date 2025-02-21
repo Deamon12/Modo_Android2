@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityPillConfig">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <TextView
+        android:id="@+id/modo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="modo"
+        android:fontFamily="@font/aqua"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/add_plan_text"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:text="Add Plan"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/left_guide"
+        app:layout_constraintTop_toBottomOf="@id/modo"/>
+
+    <TextView
+        android:id="@+id/medication_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:text="Medications name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/left_guide"
+        app:layout_constraintTop_toBottomOf="@id/add_plan_text"/>
+
+    <ImageView
+        android:id="@+id/meds_icon"
+        android:layout_width="30dp"
+        android:layout_height="0dp"
+        android:src="@drawable/medication_24dp"
+        android:background="#E5E5E5"
+        app:layout_constraintStart_toStartOf="@id/left_guide"
+        app:layout_constraintTop_toTopOf="@id/med_name_input"
+        app:layout_constraintBottom_toBottomOf="@id/med_name_input"/>
+
+    <EditText
+        android:id="@+id/med_name_input"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:inputType="text"
+        android:background="#E5E5E5"
+        android:backgroundTint="#E5E5E5"
+        android:queryHint="Search"
+        android:tooltipText="Search"
+        app:layout_constraintTop_toBottomOf="@id/medication_name_text"
+        app:layout_constraintStart_toEndOf="@id/meds_icon"
+        app:layout_constraintEnd_toEndOf="@id/right_guide"/>
+
+
+    <TextView
+        android:id="@+id/amt_dur_text"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:text="Medications name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/left_guide"
+        app:layout_constraintTop_toBottomOf="@id/add_plan_text"/>
+
+    <ImageView
+        android:id="@+id/meds_icon"
+        android:layout_width="30dp"
+        android:layout_height="0dp"
+        android:src="@drawable/medication_24dp"
+        android:background="#E5E5E5"
+        app:layout_constraintStart_toStartOf="@id/left_guide"
+        app:layout_constraintTop_toTopOf="@id/med_name_input"
+        app:layout_constraintBottom_toBottomOf="@id/med_name_input"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
