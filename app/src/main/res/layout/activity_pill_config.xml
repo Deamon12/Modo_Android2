@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@id/add_plan_text"/>
 
     <ImageView
-        android:id="@+id/meds_icon"
+        android:id="@+id/config_meds_icon"
         android:layout_width="30dp"
         android:layout_height="0dp"
         android:src="@drawable/medication_24dp"
