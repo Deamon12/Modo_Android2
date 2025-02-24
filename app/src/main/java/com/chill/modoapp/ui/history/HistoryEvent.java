@@ -4,11 +4,13 @@ public class HistoryEvent {
     private int id;
     private String title;
     private long timestamp;
+    private int state;
 
-    public HistoryEvent(int id, String title, long timestamp) {
+    public HistoryEvent(int id, String title, long timestamp, int state) {
         this.id = id;
         this.title = title;
         this.timestamp = timestamp;
+        this.state = state;
     }
 
     public int getId() {
@@ -19,5 +21,8 @@ public class HistoryEvent {
     }
     public long getTimestamp() {
         return timestamp;
+    }
+    public int getState() {
+        return state;
     }
 }

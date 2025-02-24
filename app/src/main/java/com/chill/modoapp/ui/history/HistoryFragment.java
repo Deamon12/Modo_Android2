@@ -67,6 +67,7 @@ public class HistoryFragment extends Fragment {
             for (int j = 0; j < eventCount; j++) {
                 int hour = random.nextInt(24);
                 int minute = random.nextInt(60);
+                int state = random.nextInt(3);
 
                 // Clone calendar to set event time without affecting header date
                 Calendar eventCalendar = (Calendar) calendar.clone();
@@ -75,7 +76,7 @@ public class HistoryFragment extends Fragment {
                 eventCalendar.set(Calendar.SECOND, 0);
 
                 String title = String.format("Event at %02d:%02d", hour, minute);
-                HistoryEvent event = new HistoryEvent(j, title, eventCalendar.getTimeInMillis());
+                HistoryEvent event = new HistoryEvent(j, title, eventCalendar.getTimeInMillis(), state);
                 items.add(new HistoryListItem.EventItemHistory(event));
             }
             // Move to the next day

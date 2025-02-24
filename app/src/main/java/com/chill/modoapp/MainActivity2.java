@@ -1,5 +1,6 @@
 package com.chill.modoapp;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -34,10 +35,11 @@ public class MainActivity2 extends AppCompatActivity {
 
     SchedulerFactory sf = new StdSchedulerFactory();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         pillList.add(new Pill("Omega 3", 0));
         pillList.add(new Pill("Aspirin", 0));
@@ -58,10 +60,9 @@ public class MainActivity2 extends AppCompatActivity {
                         .setAnchorView(R.id.fab).show();
             }
         });
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
-
-
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -81,18 +82,10 @@ public class MainActivity2 extends AppCompatActivity {
         return true;
     }
 
-/*    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }*/
-
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
 }

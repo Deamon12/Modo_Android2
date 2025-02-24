@@ -3,7 +3,11 @@ package com.chill.modoapp.ui.history;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chill.modoapp.R;
@@ -72,11 +76,15 @@ public class EventsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     // ViewHolder for event items
     public static class EventViewHolder extends RecyclerView.ViewHolder {
         TextView titleTextView, timeTextView;
+        ImageView iconView;
+        ConstraintLayout event_constraint;
 
         public EventViewHolder(View itemView) {
             super(itemView);
             titleTextView = itemView.findViewById(R.id.eventTitleTextView);
             timeTextView = itemView.findViewById(R.id.eventTimeTextView);
+            iconView = itemView.findViewById(R.id.item_status_icon);
+            event_constraint = itemView.findViewById(R.id.event_constraint);
         }
 
         public void bind(HistoryListItem.EventItemHistory item) {
@@ -84,6 +92,32 @@ public class EventsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
             String formattedTime = sdf.format(new Date(item.getEvent().getTimestamp()));
             timeTextView.setText(formattedTime);
+
+            if(item.getEvent().getState() == 0) {
+                iconView.setImageResource(R.drawable.check_circle_24dp);
+                event_constraint.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(iconView.getContext(), "Schedule followed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            } else if(item.getEvent().getState() == 1) {
+                iconView.setImageResource(R.drawable.error_24dp);
+                event_constraint.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(iconView.getContext(), "Schedule missed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            } else {
+                iconView.setImageResource(R.drawable.warning);
+                event_constraint.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(iconView.getContext(), "Schedule late", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
         }
     }
 }

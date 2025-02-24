@@ -14,7 +14,7 @@
             android:title="@string/menu_logs" />
         <item
             android:id="@+id/nav_reminders"
-            android:icon="@drawable/notifications_active_24dp"
+            android:icon="@drawable/notifications_active"
             android:title="@string/menu_reminders"
             android:enabled="false"/>
         <item
