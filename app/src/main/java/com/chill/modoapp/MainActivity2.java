@@ -17,8 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.chill.modoapp.databinding.ActivityMain2Binding;
 
-import org.quartz.SchedulerFactory;
-import org.quartz.impl.StdSchedulerFactory;
+import org.quartz.Job;
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -33,7 +34,15 @@ public class MainActivity2 extends AppCompatActivity {
     public List<Pill> pillList = new ArrayList<>(4);
     Queue<Object> pillHistoryQueue = new LinkedList<>();
 
-    SchedulerFactory sf = new StdSchedulerFactory();
+    //SchedulerFactory sf = new StdSchedulerFactory();
+
+    public static class MyJob implements Job {
+        @Override
+        public void execute(JobExecutionContext context) throws JobExecutionException {
+            System.out.println("Job executed at " + new java.util.Date());
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +55,30 @@ public class MainActivity2 extends AppCompatActivity {
         pillList.add(new Pill("Vitamin B12", 0));
         pillList.add(new Pill("Lexapro", 0));
 
-        //Scheduler sched = sf.getScheduler();
+//        try {
+//
+//            // Define the job and tie it to our MyJob class
+//            JobDetail job = JobBuilder.newJob(MyJob.class)
+//                    .withIdentity("job1", "group1")
+//                    .build();
+//
+//            // Create a trigger that starts now and repeats every 4 hours indefinitely
+//            Trigger trigger = TriggerBuilder.newTrigger()
+//                    .withIdentity("trigger1", "group1")
+//                    .startNow()
+//                    .withSchedule(SimpleScheduleBuilder.simpleSchedule()
+//                            .withIntervalInHours(4)
+//                            .repeatForever())
+//                    .build();
+//
+//            // Grab the Scheduler instance from the Factory and start it
+//            Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
+//            scheduler.start();
+//            scheduler.scheduleJob(job, trigger);
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
         binding = ActivityMain2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

@@ -48,6 +48,8 @@ dependencies {
 
     implementation 'org.quartz-scheduler:quartz:2.3.2'
     implementation 'com.opencsv:opencsv:4.6'
+    implementation 'me.champeau.openbeans:openbeans:1.0.2'
 
-
+    //implementation 'com.googlecode:openbeans:1.0'
+    api 'com.github.panga:java-beans-lite:1.0.2'
 }
