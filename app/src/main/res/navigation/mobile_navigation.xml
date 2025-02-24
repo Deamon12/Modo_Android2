@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.chill.modoapp.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="com.chill.modoapp.ui.history.HistoryFragment"
+        android:label="@string/menu_logs"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/nav_reminders"
+        android:name="com.chill.modoapp.ui.reminders.RemindersFragment"
+        android:label="@string/menu_reminders"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/nav_manage"
+        android:name="com.chill.modoapp.ui.manage.ManageFragment"
+        android:label="@string/menu_manage_pills"
+        tools:layout="@layout/fragment_manage" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.chill.modoapp.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <!--<fragment
+        android:id="@+id/nav_logout"
+        android:name="com.chill.modoapp.ui."
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_logout"/>-->
+
+
+</navigation>

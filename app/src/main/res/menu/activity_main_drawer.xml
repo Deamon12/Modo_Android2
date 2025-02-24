@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_icon_24dp"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/history_24dp"
+            android:title="@string/menu_logs" />
+        <item
+            android:id="@+id/nav_reminders"
+            android:icon="@drawable/notifications_active_24dp"
+            android:title="@string/menu_reminders"
+            android:enabled="false"/>
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/prescriptions_24dp"
+            android:title="@string/menu_manage_pills" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/diversity_3_24dp"
+            android:title="@string/menu_share" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout_24dp"
+            android:title="@string/menu_logout"
+            android:enabled="false"/>
+    </group>
+</menu>

@@ -1,0 +1,201 @@
+Name,Category
+Acetaminophen,Medication
+Ibuprofen,Medication
+Aspirin,Medication
+Naproxen,Medication
+Diclofenac,Medication
+Celecoxib,Medication
+Metformin,Medication
+Glipizide,Medication
+Glyburide,Medication
+Insulin,Medication
+Lisinopril,Medication
+Amlodipine,Medication
+Losartan,Medication
+Metoprolol,Medication
+Carvedilol,Medication
+Simvastatin,Medication
+Atorvastatin,Medication
+Rosuvastatin,Medication
+Pravastatin,Medication
+Fluvastatin,Medication
+Omeprazole,Medication
+Esomeprazole,Medication
+Lansoprazole,Medication
+Pantoprazole,Medication
+Ranitidine,Medication
+Famotidine,Medication
+Cimetidine,Medication
+Zantac,Medication
+Amoxicillin,Medication
+Penicillin,Medication
+Azithromycin,Medication
+Ciprofloxacin,Medication
+Levofloxacin,Medication
+Doxycycline,Medication
+Minocycline,Medication
+Clindamycin,Medication
+Cephalexin,Medication
+Cephalosporins,Medication
+Vancomycin,Medication
+Erythromycin,Medication
+Sulfamethoxazole-Trimethoprim,Medication
+Fluconazole,Medication
+Itraconazole,Medication
+Voriconazole,Medication
+Albuterol,Medication
+Levalbuterol,Medication
+Ipratropium,Medication
+Tiotropium,Medication
+Salbutamol,Medication
+Prednisone,Medication
+Hydrocortisone,Medication
+Methylprednisolone,Medication
+Dexamethasone,Medication
+Furosemide,Medication
+Hydrochlorothiazide,Medication
+Spironolactone,Medication
+Valsartan,Medication
+Digoxin,Medication
+Warfarin,Medication
+Heparin,Medication
+Enoxaparin,Medication
+Clopidogrel,Medication
+Ticagrelor,Medication
+Prasugrel,Medication
+Nitroglycerin,Medication
+Isosorbide,Medication
+Sildenafil,Medication
+Tadalafil,Medication
+Vardenafil,Medication
+Finasteride,Medication
+Dutasteride,Medication
+Tamsulosin,Medication
+Alprazolam,Medication
+Diazepam,Medication
+Lorazepam,Medication
+Clonazepam,Medication
+Sertraline,Medication
+Fluoxetine,Medication
+Paroxetine,Medication
+Citalopram,Medication
+Escitalopram,Medication
+Venlafaxine,Medication
+Duloxetine,Medication
+Bupropion,Medication
+Mirtazapine,Medication
+Olanzapine,Medication
+Risperidone,Medication
+Quetiapine,Medication
+Aripiprazole,Medication
+Lithium,Medication
+Carbamazepine,Medication
+Lamotrigine,Medication
+Valproate,Medication
+Topiramate,Medication
+Phenytoin,Medication
+Gabapentin,Medication
+Pregabalin,Medication
+Meloxicam,Medication
+Indomethacin,Medication
+Ketorolac,Medication
+Allopurinol,Medication
+Febuxostat,Medication
+Colchicine,Medication
+Methotrexate,Medication
+Hydroxychloroquine,Medication
+Azathioprine,Medication
+Cyclosporine,Medication
+Tacrolimus,Medication
+Sirolimus,Medication
+Mycophenolate,Medication
+Infliximab,Medication
+Adalimumab,Medication
+Etanercept,Medication
+Certolizumab,Medication
+Golimumab,Medication
+Secukinumab,Medication
+Ustekinumab,Medication
+Vedolizumab,Medication
+Budesonide,Medication
+Mesalamine,Medication
+Sulfasalazine,Medication
+Oxycodone,Medication
+Hydrocodone,Medication
+Tramadol,Medication
+Codeine,Medication
+Morphine,Medication
+Fentanyl,Medication
+Methadone,Medication
+Buprenorphine,Medication
+Naloxone,Medication
+Insulin glargine,Medication
+Insulin detemir,Medication
+Insulin aspart,Medication
+Insulin lispro,Medication
+Insulin degludec,Medication
+Glucagon,Medication
+Ziprasidone,Medication
+Lurasidone,Medication
+Asenapine,Medication
+Paliperidone,Medication
+Oxybutynin,Medication
+Tolterodine,Medication
+Solifenacin,Medication
+Darifenacin,Medication
+Mirabegron,Medication
+Terazosin,Medication
+Doxazosin,Medication
+Benazepril,Medication
+Ramipril,Medication
+Enalapril,Medication
+Folic acid,Vitamin
+Vitamin A,Vitamin
+Vitamin B1 (Thiamine),Vitamin
+Vitamin B2 (Riboflavin),Vitamin
+Vitamin B3 (Niacin),Vitamin
+Vitamin B5 (Pantothenic Acid),Vitamin
+Vitamin B6,Vitamin
+Vitamin B7 (Biotin),Vitamin
+Vitamin B9 (Folate),Vitamin
+Vitamin B12,Vitamin
+Vitamin C,Vitamin
+Vitamin D,Vitamin
+Vitamin E,Vitamin
+Calcium,Supplement
+Iron,Supplement
+Magnesium,Supplement
+Zinc,Supplement
+Selenium,Supplement
+Potassium,Supplement
+Chromium,Supplement
+Manganese,Supplement
+Copper,Supplement
+Iodine,Supplement
+Omega-3 (Fish Oil),Supplement
+Coenzyme Q10,Supplement
+Probiotics,Supplement
+Glucosamine,Supplement
+Chondroitin,Supplement
+Melatonin,Supplement
+Creatine,Supplement
+Whey protein,Supplement
+Casein protein,Supplement
+Multivitamin,Supplement
+Biotin supplement,Supplement
+Folic acid supplement,Supplement
+Echinacea,Supplement
+Ginkgo Biloba,Supplement
+Ginseng,Supplement
+Turmeric,Supplement
+Resveratrol,Supplement
+Green tea extract,Supplement
+Garlic extract,Supplement
+Saw Palmetto,Supplement
+Flaxseed oil,Supplement
+Spirulina,Supplement
+Chlorella,Supplement
+Astaxanthin,Supplement
+Lutein,Supplement
+Zeaxanthin,Supplement
+Beta-carotene,Supplement
