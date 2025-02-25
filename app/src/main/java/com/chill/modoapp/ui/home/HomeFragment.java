@@ -13,16 +13,19 @@ import androidx.lifecycle.ViewModelProvider;
 import android.os.Handler;
 
 import com.chill.modoapp.MainActivity2;
+import com.chill.modoapp.Pill;
 import com.chill.modoapp.databinding.FragmentHomeBinding;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
     private static String TAG = "HomeFragment";
     private FragmentHomeBinding binding;
     private TextView timenowText;
+    private TextView pill1DetailsTV, pill2DetailsTV, pill3DetailsTV, pill4DetailsTV;
 
     // Front time looper
     private Handler handler = new Handler();
@@ -38,6 +41,23 @@ public class HomeFragment extends Fragment {
         startTimeLooper();
 
         Log.d(TAG, "onCreateView: " + ((MainActivity2) requireActivity()).pillList.get(0));
+
+        pill1DetailsTV = binding.pill1DetailsText;
+        pill2DetailsTV = binding.pill2DetailsText;
+        pill3DetailsTV = binding.pill3DetailsText;
+        pill4DetailsTV = binding.pill4DetailsText;
+
+        List<Pill> pillList = ((MainActivity2)getActivity()).pillList;
+
+        Pill pill1 = pillList.get(0);
+        Pill pill2 = pillList.get(1);
+        Pill pill3 = pillList.get(2);
+        Pill pill4 = pillList.get(3);
+
+        pill1DetailsTV.setText(pill1.schedule + " - Completed");
+        pill2DetailsTV.setText(pill2.schedule + " - Upcoming");
+        pill3DetailsTV.setText(pill3.schedule + " - Upcoming");
+        pill4DetailsTV.setText(pill4.schedule + " - Overdue");
 
         //final TextView textView = binding.textHome;
         //homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);

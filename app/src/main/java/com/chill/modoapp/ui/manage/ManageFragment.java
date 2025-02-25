@@ -29,6 +29,7 @@ public class ManageFragment extends Fragment {
     private TextView pill1NameTV, pill2NameTV, pill3NameTV, pill4NameTV;
     private TextView pill1InstructTV, pill2InstructTV, pill3InstructTV, pill4InstructTV;
     private TextView pill1QuantityTV, pill2QuantityTV, pill3QuantityTV, pill4QuantityTV;
+    private TextView pill1ScheduleTV, pill2ScheduleTV, pill3ScheduleTV, pill4ScheduleTV;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ManageViewModel manageViewModel = new ViewModelProvider(this).get(ManageViewModel.class);
@@ -52,27 +53,36 @@ public class ManageFragment extends Fragment {
         pill3QuantityTV = binding.pill3QuantityText;
         pill4QuantityTV = binding.pill4QuantityText;
 
+        pill1ScheduleTV = binding.pill1ScheduleText;
+        pill2ScheduleTV = binding.pill2ScheduleText;
+        pill3ScheduleTV = binding.pill3ScheduleText;
+        pill4ScheduleTV = binding.pill4ScheduleText;
+
         List<Pill> pillList = ((MainActivity2)getActivity()).pillList;
 
         Pill pill1 = pillList.get(0);
         pill1NameTV.setText(pill1.pillName);
         pill1InstructTV.setText("Instruction: " + pill1.instruction);
         pill1QuantityTV.setText("Quantity: " + pill1.quantity);
+        pill1ScheduleTV.setText("Schedule: " + pill1.schedule);
 
         Pill pill2 = pillList.get(1);
         pill2NameTV.setText(pill2.pillName);
         pill2InstructTV.setText("Instruction: " + pill2.instruction);
-        pill1QuantityTV.setText("Quantity: " + pill2.quantity);
+        pill2QuantityTV.setText("Quantity: " + pill2.quantity);
+        pill2ScheduleTV.setText("Schedule: " + pill2.schedule);
 
         Pill pill3 = pillList.get(2);
         pill3NameTV.setText(pill3.pillName);
         pill3InstructTV.setText("Instruction: " + pill3.instruction);
-        pill1QuantityTV.setText("Quantity: " + pill3.quantity);
+        pill3QuantityTV.setText("Quantity: " + pill3.quantity);
+        pill3ScheduleTV.setText("Schedule: " + pill3.schedule);
 
         Pill pill4 = pillList.get(3);
         pill4NameTV.setText(pill4.pillName);
         pill4InstructTV.setText("Instruction: " + pill4.instruction);
-        pill1QuantityTV.setText("Quantity: " + pill4.quantity);
+        pill4QuantityTV.setText("Quantity: " + pill4.quantity);
+        pill4ScheduleTV.setText("Schedule: " + pill4.schedule);
 
 
 
