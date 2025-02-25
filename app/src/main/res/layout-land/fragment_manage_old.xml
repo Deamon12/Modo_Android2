@@ -45,6 +45,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:hint="Pill name..."
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/vertical"
@@ -64,8 +65,9 @@
 
     <Spinner
         android:id="@+id/pill_amount_spinner"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
+        android:entries="@array/pill_amounts"
         app:layout_constraintStart_toStartOf="@id/pill_name_label"
         app:layout_constraintTop_toBottomOf="@id/pill_amount_label"/>
 
@@ -73,20 +75,21 @@
         android:id="@+id/pill_often_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="10dp"
         android:textAlignment="center"
         android:textSize="16sp"
-        android:text="How often?"
+        android:text="How often"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/vertical"
-        app:layout_constraintTop_toBottomOf="@id/adjust_autocomplete" />
+        app:layout_constraintStart_toStartOf="@id/pill_often_spinner"
+        app:layout_constraintTop_toTopOf="@id/pill_amount_label" />
 
     <Spinner
-        android:layout_width="wrap_content"
+        android:id="@+id/pill_often_spinner"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/pill_often_label"
-        app:layout_constraintTop_toBottomOf="@id/pill_often_label"/>
+        android:entries="@array/pill_amounts"
+        app:layout_constraintStart_toEndOf="@id/pill_amount_spinner"
+        app:layout_constraintTop_toBottomOf="@id/pill_often_label"
+        app:layout_constraintEnd_toStartOf="@id/vertical"/>
 
     <TimePicker
         android:id="@+id/timePicker"
@@ -96,6 +99,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

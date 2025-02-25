@@ -4,13 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.chill.modoapp.MainActivity2;
+import com.chill.modoapp.Pill;
 import com.chill.modoapp.databinding.FragmentManageBinding;
 import com.opencsv.CSVReader;
 
@@ -18,22 +19,66 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ManageFragment extends Fragment {
 
     private FragmentManageBinding binding;
     private ArrayList pills = new ArrayList();
 
+    private TextView pill1NameTV, pill2NameTV, pill3NameTV, pill4NameTV;
+    private TextView pill1InstructTV, pill2InstructTV, pill3InstructTV, pill4InstructTV;
+    private TextView pill1QuantityTV, pill2QuantityTV, pill3QuantityTV, pill4QuantityTV;
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ManageViewModel slideshowViewModel = new ViewModelProvider(this).get(ManageViewModel.class);
+        ManageViewModel manageViewModel = new ViewModelProvider(this).get(ManageViewModel.class);
 
         loadPillsCsv();
         binding = FragmentManageBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, pills);
-        final AutoCompleteTextView tv1 = binding.adjustAutocomplete;
-        tv1.setAdapter(adapter);
+        pill1NameTV = binding.pill1NameText;
+        pill2NameTV = binding.pill2NameText;
+        pill3NameTV = binding.pill3NameText;
+        pill4NameTV = binding.pill4NameText;
+
+        pill1InstructTV = binding.pill1DescriptionText;
+        pill2InstructTV = binding.pill2DescriptionText;
+        pill3InstructTV = binding.pill3DescriptionText;
+        pill4InstructTV = binding.pill4DescriptionText;
+
+        pill1QuantityTV = binding.pill1QuantityText;
+        pill2QuantityTV = binding.pill2QuantityText;
+        pill3QuantityTV = binding.pill3QuantityText;
+        pill4QuantityTV = binding.pill4QuantityText;
+
+        List<Pill> pillList = ((MainActivity2)getActivity()).pillList;
+
+        Pill pill1 = pillList.get(0);
+        pill1NameTV.setText(pill1.pillName);
+        pill1InstructTV.setText("Instruction: " + pill1.instruction);
+        pill1QuantityTV.setText("Quantity: " + pill1.quantity);
+
+        Pill pill2 = pillList.get(1);
+        pill2NameTV.setText(pill2.pillName);
+        pill2InstructTV.setText("Instruction: " + pill2.instruction);
+        pill1QuantityTV.setText("Quantity: " + pill2.quantity);
+
+        Pill pill3 = pillList.get(2);
+        pill3NameTV.setText(pill3.pillName);
+        pill3InstructTV.setText("Instruction: " + pill3.instruction);
+        pill1QuantityTV.setText("Quantity: " + pill3.quantity);
+
+        Pill pill4 = pillList.get(3);
+        pill4NameTV.setText(pill4.pillName);
+        pill4InstructTV.setText("Instruction: " + pill4.instruction);
+        pill1QuantityTV.setText("Quantity: " + pill4.quantity);
+
+
+
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_dropdown_item_1line, pills);
+        //final AutoCompleteTextView tv1 = binding.adjustAutocomplete;
+        //tv1.setAdapter(adapter);
         return root;
     }
 

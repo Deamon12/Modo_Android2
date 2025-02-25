@@ -50,10 +50,10 @@ public class MainActivity2 extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        pillList.add(new Pill("Omega 3", 0));
-        pillList.add(new Pill("Aspirin", 0));
-        pillList.add(new Pill("Vitamin B12", 0));
-        pillList.add(new Pill("Lexapro", 0));
+        pillList.add(new Pill("Omega 3", 0, "With breakfast", 6));
+        pillList.add(new Pill("Aspirin", 0, "None", 15));
+        pillList.add(new Pill("Vitamin B12", 0, "With lunch", 8));
+        pillList.add(new Pill("Lexapro", 0, "Before bed", 10));
 
 //        try {
 //

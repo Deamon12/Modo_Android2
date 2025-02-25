@@ -75,7 +75,21 @@ public class HistoryFragment extends Fragment {
                 eventCalendar.set(Calendar.MINUTE, minute);
                 eventCalendar.set(Calendar.SECOND, 0);
 
-                String title = String.format("Event at %02d:%02d", hour, minute);
+                String title;
+                switch (state) {
+                    case 0:
+                        title = String.format("Success at %02d:%02d", hour, minute);
+                        break;
+                    case 1:
+                        title = String.format("Missed at %02d:%02d", hour, minute);
+                        break;
+                    case 2:
+                        title = String.format("Late at %02d:%02d", hour, minute);
+                        break;
+                    default:
+                        title = String.format("Unknown event at %02d:%02d", hour, minute);
+                }
+
                 HistoryEvent event = new HistoryEvent(j, title, eventCalendar.getTimeInMillis(), state);
                 items.add(new HistoryListItem.EventItemHistory(event));
             }
