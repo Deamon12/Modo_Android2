@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2">
+    tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@color/white"
-            app:popupTheme="@style/Theme.ModoApp.PopupOverlay"/>
+            app:popupTheme="@style/Theme.ModoApp.PopupOverlay"
+            android:visibility="gone"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 

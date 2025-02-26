@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.chill.modoapp.MainActivity2;
+import com.chill.modoapp.MainActivity;
 import com.chill.modoapp.Pill;
 import com.chill.modoapp.databinding.FragmentManageBinding;
 import com.opencsv.CSVReader;
@@ -58,7 +58,7 @@ public class ManageFragment extends Fragment {
         pill3ScheduleTV = binding.pill3ScheduleText;
         pill4ScheduleTV = binding.pill4ScheduleText;
 
-        List<Pill> pillList = ((MainActivity2)getActivity()).pillList;
+        List<Pill> pillList = ((MainActivity)getActivity()).pillList;
 
         Pill pill1 = pillList.get(0);
         pill1NameTV.setText(pill1.pillName);

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -23,17 +24,25 @@
 
     <TextView
         android:id="@+id/modo"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
         android:text="modo"
         android:fontFamily="@font/aqua"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/vertical"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/vertical"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/hamburger"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintEnd_toStartOf="@id/modo"
+        app:layout_constraintTop_toTopOf="@id/modo"
+        app:layout_constraintBottom_toBottomOf="@id/modo"
+        android:src="@drawable/send_24"/>
 
     <!--<SearchView
         android:id="@+id/search_box"
@@ -80,8 +89,9 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="#BABABA"
-        app:layout_constraintStart_toStartOf="@id/modo"
-        app:layout_constraintTop_toBottomOf="@id/modo" />
+        app:layout_constraintTop_toBottomOf="@id/modo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/vertical" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/plan_card"
@@ -235,22 +245,21 @@
                     android:id="@+id/pill1_name_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
                     android:text="Omega 3"
-                    android:textSize="18sp"
+                    android:textSize="26sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/pill1_status_icon"/>
 
                 <TextView
                     android:id="@+id/pill1_details_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="2dp"
                     android:maxLines="2"
-                    android:text="1 tablet after meal - completed"
+                    android:text="1 tablet after meal"
                     android:textColor="#8A8A8A"
                     android:textSize="14sp"
                     android:textStyle="italic"
@@ -258,10 +267,11 @@
                     app:layout_constraintTop_toBottomOf="@id/pill1_name_text" />
 
                 <ImageView
+                    android:id="@+id/pill1_status_icon"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
-                    android:src="@drawable/check_circle_24dp"
+                    android:src="@drawable/schedule_blue"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -293,13 +303,13 @@
                     android:id="@+id/pill2_name_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Aspirin"
-                    android:textSize="18sp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Omega 3"
+                    android:textSize="26sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/pill2_status_icon"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
                 <TextView
                     android:id="@+id/pill2_details_text"
@@ -316,10 +326,11 @@
                     app:layout_constraintTop_toBottomOf="@id/pill2_name_text" />
 
                 <ImageView
+                    android:id="@+id/pill2_status_icon"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
-                    android:src="@drawable/arrow_circle_right_24dp"
+                    android:src="@drawable/schedule_blue"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -352,13 +363,13 @@
                     android:id="@+id/pill3_name_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Vitamin B12"
-                    android:textSize="18sp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Omega 3"
+                    android:textSize="26sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/pill3_status_icon"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
                 <TextView
                     android:id="@+id/pill3_details_text"
@@ -375,10 +386,11 @@
                     app:layout_constraintTop_toBottomOf="@id/pill3_name_text" />
 
                 <ImageView
+                    android:id="@+id/pill3_status_icon"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
-                    android:src="@drawable/arrow_circle_right_24dp"
+                    android:src="@drawable/schedule_blue"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -411,13 +423,13 @@
                     android:id="@+id/pill4_name_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Lexapro"
-                    android:textSize="18sp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Omega 3"
+                    android:textSize="26sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/pill4_status_icon"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
                 <TextView
                     android:id="@+id/pill4_details_text"
@@ -434,6 +446,7 @@
                     app:layout_constraintTop_toBottomOf="@id/pill4_name_text" />
 
                 <ImageView
+                    android:id="@+id/pill4_status_icon"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"

@@ -1,99 +1,98 @@
 package com.chill.modoapp;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
+import android.view.Menu;
 
-import androidx.activity.EdgeToEdge;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
+import com.chill.modoapp.databinding.ActivityMain2Binding;
 
-    static String TAG = "MainAct";
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
-    private CardView cardDailyPlan;
-    private CardView cardPill1;
-    private CardView cardPill2;
-    private CardView cardPill3;
-    private CardView cardPill4;
+public class MainActivity extends AppCompatActivity {
+
+    private final static String TAG = MainActivity.class.getName();
+    private AppBarConfiguration mAppBarConfiguration;
+    private ActivityMain2Binding binding;
+
+    public List<Pill> pillList = new ArrayList<>(4);
+    Queue<Object> pillHistoryQueue = new LinkedList<>();
+
+    public DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
 
-        cardDailyPlan = findViewById(R.id.plan_card);
-        cardDailyPlan.setOnClickListener(this);
-        cardDailyPlan.setOnLongClickListener(this);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        cardPill1 = findViewById(R.id.pill1_card);
-        cardPill1.setOnClickListener(this);
-        cardPill1.setOnLongClickListener(this);
+        Pill pill1 = new Pill("Omega 3", 1, "With breakfast", 6, "9:00 AM");
+        Pill pill2 = new Pill("Aspirin", 2, "None", 15, "3:00 PM");
+        Pill pill3 = new Pill("Vitamin B12", 3, "With lunch", 8, "12:00 PM");
+        Pill pill4 = new Pill("Lexapro", 4, "Before bed", 10, "9:00 PM");
 
-        cardPill2 = findViewById(R.id.pill2_card);
-        cardPill2.setOnClickListener(this);
-        cardPill2.setOnLongClickListener(this);
+        pillList.add(pill1);
+        pillList.add(pill2);
+        pillList.add(pill3);
+        pillList.add(pill4);
 
-        cardPill3 = findViewById(R.id.pill3_card);
-        cardPill3.setOnClickListener(this);
-        cardPill3.setOnLongClickListener(this);
-
-        cardPill4 = findViewById(R.id.pill4_card);
-        cardPill4.setOnClickListener(this);
-        cardPill4.setOnLongClickListener(this);
+        pill1.startTimer();
+        pill2.startTimer();
+        pill3.startTimer();
+        pill4.startTimer();
 
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        binding = ActivityMain2Binding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        setSupportActionBar(binding.appBarMain.toolbar);
+        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null)
+                        .setAnchorView(R.id.fab).show();
+            }
         });
+
+        drawer = binding.drawerLayout;
+        NavigationView navigationView = binding.navView;
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home)
+                .setOpenableLayout(drawer)
+                .build();
+
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
     }
 
     @Override
-    public void onClick(View v) {
-        Log.d(TAG, "onClick: ");
-
-        if(v == cardDailyPlan) {
-            Toast.makeText(this, "Daily clicked", Toast.LENGTH_SHORT).show();
-        }
-        else if(v == cardPill1) {
-            Toast.makeText(this, "Pill 1 clicked", Toast.LENGTH_SHORT).show();
-        }
-        else if(v == cardPill2) {
-            Toast.makeText(this, "Pill 2 clicked", Toast.LENGTH_SHORT).show();
-        }
-        else if(v == cardPill3) {
-            Toast.makeText(this, "Pill 3 clicked", Toast.LENGTH_SHORT).show();
-        }
-        else if(v == cardPill4) {
-            Toast.makeText(this, "Pill 4 clicked", Toast.LENGTH_SHORT).show();
-        }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main_activity2, menu);
+        return true;
     }
 
     @Override
-    public boolean onLongClick(View v) {
-        if(v == cardDailyPlan) {
-            Toast.makeText(this, "Daily longed", Toast.LENGTH_SHORT).show();
-        }
-        else if(v == cardPill1) {
-            Toast.makeText(this, "Pill 1 longed", Toast.LENGTH_SHORT).show();
-        }
-        else if(v == cardPill2) {
-            Toast.makeText(this, "Pill 2 longed", Toast.LENGTH_SHORT).show();
-        }
-        else if(v == cardPill3) {
-            Toast.makeText(this, "Pill 3 longed", Toast.LENGTH_SHORT).show();
-        }
-        else if(v == cardPill4) {
-            Toast.makeText(this, "Pill 4 longed", Toast.LENGTH_SHORT).show();
-        }
-        return false;
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
     }
 }
