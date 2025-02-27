@@ -181,9 +181,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private void setupPillEventHandler(Pill pill, MutableLiveData<String> textLive, MutableLiveData<Drawable> detailsIV, Context context) {
         pill.eventListener = new PillEventListener() {
             @Override
-            public void event(String test) {
-                Log.d(TAG, pill.pillName + " event: " + test);
-                if(test.equalsIgnoreCase("Done")) {
+            public void event(String message) {
+                Log.d(TAG, pill.pillName + " event: " + message);
+                if(message.equalsIgnoreCase("Done")) {
                     pill.currentStatus = Pill.Status.ready;
                     updateText(textLive, "Ready");
                     updateImage(detailsIV, readyDraw);
@@ -235,7 +235,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             Pill pill1 = ((MainActivity)getActivity()).pillList.get(0);
 
             if(pill1.currentStatus != Pill.Status.upcoming) {
-                pill1DetailsIV.setImageResource(R.drawable.arrow_circle_right_24dp);
+                pill1DetailsIV.setImageResource(R.drawable.schedule_blue);
                 pill1.currentStatus = Pill.Status.upcoming;
                 pill1.startTimer();
             }
@@ -243,7 +243,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         else if(v == pill2Card) {
             Pill pill = ((MainActivity)getActivity()).pillList.get(1);
             if(pill.currentStatus != Pill.Status.upcoming) {
-                pill1DetailsIV.setImageResource(R.drawable.arrow_circle_right_24dp);
+                pill1DetailsIV.setImageResource(R.drawable.schedule_blue);
                 pill.currentStatus = Pill.Status.upcoming;
                 pill.startTimer();
             }
@@ -251,7 +251,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         else if(v == pill3Card) {
             Pill pill = ((MainActivity)getActivity()).pillList.get(2);
             if(pill.currentStatus != Pill.Status.upcoming) {
-                pill1DetailsIV.setImageResource(R.drawable.arrow_circle_right_24dp);
+                pill1DetailsIV.setImageResource(R.drawable.schedule_blue);
                 pill.currentStatus = Pill.Status.upcoming;
                 pill.startTimer();
             }
@@ -259,7 +259,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         else if(v == pill4Card) {
             Pill pill = ((MainActivity)getActivity()).pillList.get(3);
             if(pill.currentStatus != Pill.Status.upcoming) {
-                pill1DetailsIV.setImageResource(R.drawable.arrow_circle_right_24dp);
+                pill1DetailsIV.setImageResource(R.drawable.schedule_blue);
                 pill.currentStatus = Pill.Status.upcoming;
                 pill.startTimer();
             }

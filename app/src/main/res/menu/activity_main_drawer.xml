@@ -24,7 +24,8 @@
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/diversity_3_24dp"
-            android:title="@string/menu_share" />
+            android:title="@string/menu_share"
+            android:enabled="false"/>
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/logout_24dp"
