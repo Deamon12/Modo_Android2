@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@id/manage_title" />
 
     <AutoCompleteTextView
-        android:id="@+id/adjust_autocomplete"
+        android:id="@+id/pill_name_autocomplete"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -61,7 +61,7 @@
         android:text="Amount"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/pill_name_label"
-        app:layout_constraintTop_toBottomOf="@id/adjust_autocomplete" />
+        app:layout_constraintTop_toBottomOf="@id/pill_name_autocomplete" />
 
     <Spinner
         android:id="@+id/pill_amount_spinner"

@@ -133,7 +133,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         pill1ImageLive.observe(getActivity(), new Observer<Drawable>() {
             @Override
             public void onChanged(Drawable drawable) {
-                Log.d(TAG, "onChanged: " + drawable);
                 pill1DetailsIV.setImageDrawable(drawable);
             }
         });
@@ -141,24 +140,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         pill2ImageLive.observe(getActivity(), new Observer<Drawable>() {
             @Override
             public void onChanged(Drawable drawable) {
-                Log.d(TAG, "onChanged: " );
-                pill1DetailsIV.setImageDrawable(drawable);
+                pill2DetailsIV.setImageDrawable(drawable);
             }
         });
 
         pill3ImageLive.observe(getActivity(), new Observer<Drawable>() {
             @Override
             public void onChanged(Drawable drawable) {
-                Log.d(TAG, "onChanged: ");
-                pill1DetailsIV.setImageDrawable(drawable);
+                pill3DetailsIV.setImageDrawable(drawable);
             }
         });
 
         pill4ImageLive.observe(getActivity(), new Observer<Drawable>() {
             @Override
             public void onChanged(Drawable drawable) {
-                Log.d(TAG, "onChanged: ");
-                pill1DetailsIV.setImageDrawable(drawable);
+                pill4DetailsIV.setImageDrawable(drawable);
             }
         });
 
@@ -169,10 +165,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         Pill pill3 = pillList.get(2);
         Pill pill4 = pillList.get(3);
 
-        setupPillEventHandler(pill1, pill1TextLive, pill1DetailsIV, getContext());
-        setupPillEventHandler(pill2, pill2TextLive, pill2DetailsIV, getContext());
-        setupPillEventHandler(pill3, pill3TextLive, pill3DetailsIV, getContext());
-        setupPillEventHandler(pill4, pill4TextLive, pill4DetailsIV, getContext());
+        setupPillEventHandler(pill1, pill1TextLive, pill1ImageLive, getContext());
+        setupPillEventHandler(pill2, pill2TextLive, pill2ImageLive, getContext());
+        setupPillEventHandler(pill3, pill3TextLive, pill3ImageLive, getContext());
+        setupPillEventHandler(pill4, pill4TextLive, pill4ImageLive, getContext());
 
         pill1NameText.setText(pill1.pillName);
         pill2NameText.setText(pill2.pillName);
@@ -182,20 +178,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         return root;
     }
 
-    private void setupPillEventHandler(Pill pill, MutableLiveData<String> textLive, ImageView detailsIV, Context context) {
+    private void setupPillEventHandler(Pill pill, MutableLiveData<String> textLive, MutableLiveData<Drawable> detailsIV, Context context) {
         pill.eventListener = new PillEventListener() {
             @Override
             public void event(String test) {
-                Log.d(TAG, "event: " + test);
+                Log.d(TAG, pill.pillName + " event: " + test);
                 if(test.equalsIgnoreCase("Done")) {
                     pill.currentStatus = Pill.Status.ready;
                     updateText(textLive, "Ready");
-                    updateImage(pill1ImageLive, readyDraw);
+                    updateImage(detailsIV, readyDraw);
                     NotificationHelper.showNotification(context, pill);
                 } else {
                     pill.currentStatus = Pill.Status.upcoming;
                     updateText(textLive, pill.schedule + " - " + pill.getTimeDetails());
-                    updateImage(pill1ImageLive, waitingDraw);
+                    updateImage(detailsIV, waitingDraw);
                 }
             }
         };
@@ -206,7 +202,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void updateImage(MutableLiveData<Drawable> liveView, Drawable draw) {
-        Log.d(TAG, "updateImage: ");
         liveView.postValue(draw);
     }
 

@@ -6,7 +6,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.manage.ManageFragment"
-    android:background="#9287CDED">
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/manage_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/manage_back"
+        app:layout_constraintTop_toTopOf="@id/manage_back"
+        app:layout_constraintBottom_toBottomOf="@id/manage_back"/>
+
+    <ImageView
+        android:id="@+id/manage_back"
+        android:layout_width="65dp"
+        android:layout_height="0dp"
+        android:src="@drawable/arrow_back"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="@id/manage_toolbar"
+        app:layout_constraintStart_toStartOf="@id/manage_toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/manage_toolbar"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/manage_vertical"
@@ -38,9 +66,10 @@
         app:layout_constraintGuide_percent="0.75" />
 
     <View
+        android:id="@+id/pill_slot1"
         android:layout_width="10dp"
         android:layout_height="0dp"
-        android:background="#4B2192ED"
+        android:background="#2192ED"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,65 +77,51 @@
         app:layout_constraintBottom_toTopOf="@id/manage_horizontal_25"/>
 
     <View
+        android:id="@+id/pill_slot2"
         android:layout_width="10dp"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:background="#4B2192ED"
+        android:background="#2192ED"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/manage_horizontal_25"
         app:layout_constraintBottom_toTopOf="@id/manage_horizontal"/>
 
     <View
+        android:id="@+id/pill_slot3"
         android:layout_width="10dp"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:background="#4B2192ED"
+        android:background="#2192ED"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/manage_horizontal"
         app:layout_constraintBottom_toTopOf="@id/manage_horizontal_75"/>
 
     <View
+        android:id="@+id/pill_slot4"
         android:layout_width="10dp"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:background="#4B2192ED"
+        android:background="#2192ED"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/manage_horizontal_75"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="10dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="10dp"
-        android:background="#4B2192ED"
-        app:layout_constraintStart_toStartOf="@id/manage_pill1_card"
-        app:layout_constraintTop_toTopOf="@id/manage_pill1_card"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/manage_pill1_card"/>
-
     <androidx.cardview.widget.CardView
         android:id="@+id/manage_pill1_card"
-        android:layout_width="300dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="25dp"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="3dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/manage_horizontal_25"
-        android:layout_weight=".9"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintEnd_toEndOf="@id/manage_vertical"
+        app:layout_constraintBottom_toBottomOf="@id/manage_horizontal"
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#87CDED"
+        app:cardCornerRadius="20dp"
         app:cardElevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -162,6 +177,7 @@
 
 
             <ImageView
+                android:id="@+id/pill1_remove"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/delete_24_no_fill"
@@ -170,6 +186,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+                android:id="@+id/pill1_edit"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/edit_24no_fill"
@@ -177,47 +194,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
-            <View
-                android:layout_width="8dp"
-                android:layout_height="match_parent"
-                android:background="#4B2192ED"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="10dp"
-        android:background="#4B2192ED"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintTop_toTopOf="@id/manage_pill2_card"
-        app:layout_constraintBottom_toBottomOf="@id/manage_pill2_card"
-        app:layout_constraintStart_toStartOf="@id/manage_pill2_card"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/manage_pill2_card"
-        android:layout_width="300dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="3dp"
-        app:layout_constraintTop_toBottomOf="@id/manage_horizontal_25"
-        app:layout_constraintBottom_toTopOf="@id/manage_horizontal"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"
         app:layout_constraintStart_toEndOf="@id/manage_vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_weight=".9"
+        app:layout_constraintBottom_toTopOf="@id/manage_horizontal"
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#87CDED"
+        app:cardCornerRadius="20dp"
         app:cardElevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -273,6 +265,7 @@
 
 
             <ImageView
+                android:id="@+id/pill2_remove"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/delete_24_no_fill"
@@ -281,6 +274,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+                android:id="@+id/pill2_edit"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/edit_24no_fill"
@@ -288,47 +282,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
-            <View
-                android:layout_width="8dp"
-                android:layout_height="match_parent"
-                android:background="#4B2192ED"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="10dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="10dp"
-        android:background="#4B2192ED"
-        app:layout_constraintStart_toStartOf="@id/manage_pill3_card"
-        app:layout_constraintTop_toTopOf="@id/manage_pill3_card"
-        app:layout_constraintBottom_toBottomOf="@id/manage_pill3_card"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
     <androidx.cardview.widget.CardView
         android:id="@+id/manage_pill3_card"
-        android:layout_width="300dp"
-        android:layout_height="0dp"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/manage_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/manage_horizontal_75"
-        android:layout_weight=".9"
+        app:layout_constraintEnd_toStartOf="@id/manage_vertical"
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#87CDED"
+        app:cardCornerRadius="20dp"
         app:cardElevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -384,6 +353,7 @@
 
 
             <ImageView
+                android:id="@+id/pill3_remove"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/delete_24_no_fill"
@@ -392,6 +362,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+                android:id="@+id/pill3_edit"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/edit_24no_fill"
@@ -399,49 +370,24 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
-            <View
-                android:layout_width="8dp"
-                android:layout_height="match_parent"
-                android:background="#4B2192ED"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="10dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="10dp"
-        android:background="#4B2192ED"
-        app:layout_constraintStart_toStartOf="@id/manage_pill4_card"
-        app:layout_constraintTop_toTopOf="@id/manage_pill4_card"
-        app:layout_constraintBottom_toBottomOf="@id/manage_pill4_card"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
     <androidx.cardview.widget.CardView
         android:id="@+id/manage_pill4_card"
-        android:layout_width="300dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
         app:layout_constraintStart_toEndOf="@id/manage_vertical"
-        app:layout_constraintTop_toBottomOf="@id/manage_horizontal_75"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_weight=".9"
-        android:outlineSpotShadowColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/manage_horizontal"
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#87CDED"
+        app:cardCornerRadius="20dp"
         app:cardElevation="0dp">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -495,6 +441,7 @@
 
 
             <ImageView
+                android:id="@+id/pill4_remove"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/delete_24_no_fill"
@@ -503,20 +450,13 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+                android:id="@+id/pill4_edit"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/edit_24no_fill"
                 android:layout_margin="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
-
-            <View
-                android:layout_width="8dp"
-                android:layout_height="match_parent"
-                android:background="#4B2192ED"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
